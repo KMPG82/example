@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +8,82 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/_remake.css">
   <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 </head>
+
 <body>
   {{#if currentUser}}
-    <a href="/user/logout">Logout</a>
+  <a href="/user/logout">Logout</a>
   {{else}}
-    <a class="nav__button" href="/user/signup">Sign up</a>
-    &nbsp;
-    <a class="nav__button" href="/user/login">Log in</a>
+  <nav class="navbar">
+    <div class="nav__container">
+      <div class="nav__left">
+        <img
+          src="../assets//images/jameboyyy_pokemon_logo_for_pokemon_photo_website._sprite_style._3207e6bf-a902-4630-a04f-411f0dc55454.png"
+          alt="" class="nav__logo">
+        <ul class="nav__lists">
+          <li class="nav__list">
+            <a class="nav__button" href="">Home</a>
+          </li>
+          <li class="nav__list">
+            <a class="nav__button" href="">Trade</a>
+          </li>
+          <li class="nav__list">
+            <a class="nav__button" href="/pages/about-us.hbs">About</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav__right">
+        <ul class="nav__lists">
+          <li class="nav__list">
+            <a class="nav__button" href="/user/signup">Sign up</a>
+          </li>
+          <li class="nav__list">
+            <a class="nav__button" href="/user/login">Log in</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+
+  </nav>
+
+
   {{/if}}
   {{!-- Show errors --}}
   {{#if flashErrors }}
-    {{#each flashErrors }}
-      <div>{{ this }}</div>
-    {{/each}}
+  {{#each flashErrors }}
+  <div>{{ this }}</div>
+  {{/each}}
   {{/if}}
   {{!-- Show success messages --}}
   {{#if flashSuccesses }}
-    {{#each flashSuccesses }}
-      <div>{{ this }}</div>
-    {{/each}}
+  {{#each flashSuccesses }}
+  <div>{{ this }}</div>
+  {{/each}}
   {{/if}}
   {{> yield }}
   {{#if isPageAuthor}}
-    {{!-- Prevent loading the Remake framework if the page isn't editable --}}
-    <script src="/assets/js/vendor/Sortable.min.js"></script>
-    <script src="/assets/js/vendor/crostini.min.js"></script>
-    <script src="/remake/js/remake.min.js"></script>
-    <script src="/assets/js/remake-init.js"></script>
+  {{!-- Prevent loading the Remake framework if the page isn't editable --}}
+  <script src="/assets/js/vendor/Sortable.min.js"></script>
+  <script src="/assets/js/vendor/crostini.min.js"></script>
+  <script src="/remake/js/remake.min.js"></script>
+  <script src="/assets/js/remake-init.js"></script>
   {{/if}}
   <script src="/assets/js/main.js"></script>
+  <footer>
+    <div class="footer-group"><img class="footer-logo"
+        src="..\assets\images\jameboyyy_pokemon_logo_for_pokemon_photo_website._sprite_style._3207e6bf-a902-4630-a04f-411f0dc55454.png"
+        alt="">
+      <p class="copyright">Copyright © 2023</p>
+      <ul class="footer-ul">
+        <li class="footer-link"><a href="#link"> Home</a></li>
+        <li class="footer-link"><a href="#link">Trade</a></li>
+        <li class="footer-last-link"><a href="#link">About</a></li>
+      </ul>
+    </div>
+
+  </footer>
 </body>
+
 </html>
