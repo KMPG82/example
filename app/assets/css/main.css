@@ -252,6 +252,7 @@ a {
     height: 500px;
 }
 
+/* 
 @media (max-width:480px) {
     .main {
         display: flex;
@@ -428,7 +429,7 @@ a {
         height: 250px;
         bottom: 120px;
     }
-}
+} */
 
 /* 320px — 480px: Mobile devices
 481px — 768px: iPads, Tablets
